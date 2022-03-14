@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 2000px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:link {
+  color: white;
+}
+
+a:hover {
+  opacity: 0.6;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header {
+  width: 100vw;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3e3a39;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+header .adtec-logo {
+  margin-left: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+header .list-menu {
+  margin-right: 30px;
+  margin-left: auto;
+}
+
+header .list-menu .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 2.2;
+}
+
+header .list-menu .list li {
+  margin-right: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+header .list-menu .list li:nth-child(5) {
+  margin-right: 30px;
+}
+
+header .list-menu .list li.email-icon {
+  margin-right: 19px;
+  margin-top: 5px;
+}
+
+header .list-menu .list li.line-icon {
+  margin-right: 0;
+  margin-top: 12px;
+}
+
+header .list-menu .list li::after {
+  content: "";
+  width: 2px;
+  height: 22px;
+  background-color: white;
+  position: absolute;
+  top: 9px;
+  right: -25px;
+}
+
+header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-child(6)::after, header .list-menu .list li:nth-child(7)::after {
+  display: none;
+}
+
+.main {
+  margin-top: 80px;
+  width: 100%;
+  height: 100vh;
+}
+
+.intro-sec {
+  position: relative;
+}
+
+.intro-sec .intro-img {
+  height: 850px;
+  background-image: url(images/top-img.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.intro-sec h2 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 50px;
+  text-shadow: 2px 6px 8px #282726;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  color: white;
+}
+
+.intro-sec .white-line {
+  width: 2px;
+  height: 60px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+
+.intro-sec .black-line {
+  width: 2px;
+  height: 60px;
+  background-color: #00287b;
+  position: absolute;
+  left: 50%;
+  bottom: -60px;
+}
+
+.concept-sec {
+  width: 100%;
+  height: 743px;
+  text-align: center;
+  margin-top: 105px;
+  margin-bottom: 114px;
+}
+/*# sourceMappingURL=style.css.map */
