@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="サイトの概要を記載" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="" href="favicon.ico" />
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <title>有限会社アドテック</title>
   </head>
 
@@ -113,7 +118,9 @@
       </section>
 
       <div class="button_wrap">
-        <button class="contact_button">お問い合せはこちら</button>
+        <a href="#contact" class="contact_button">
+          <span>お問い合せはこちら</span> <img src="images/allow.png" />
+        </a>
       </div>
     </div>
     <!-- service ここまで -->
@@ -129,8 +136,172 @@
         </div>
       </section>
       <!--  -->
-      <section class=""></section>
+      <div class="slider_area">
+        <div class="slider_wrap">
+          <div class="slider_item">
+            <img src="images/slick1.png" />
+            <div class="mask_text">
+              <div class="caption">NIMIL様 / 看板制作</div>
+            </div>
+          </div>
+          <div class="slider_item">
+            <img src="images/slick2.png" />
+            <div class="mask_text">
+              <div class="caption">NIMIL様 / 看板制作</div>
+            </div>
+          </div>
+          <div class="slider_item">
+            <img src="images/slick3.png" />
+            <div class="mask_text">
+              <div class="caption">NIMIL様 / 看板制作</div>
+            </div>
+          </div>
+          <div class="slider_item">
+            <img src="images/slick4.png" />
+            <div class="mask_text">
+              <div class="caption">NIMIL様 / 看板制作</div>
+            </div>
+          </div>
+          <div class="slider_item">
+            <img src="images/slick5.png" />
+            <div class="mask_text">
+              <div class="caption">NIMIL様 / 看板制作</div>
+            </div>
+          </div>
+          <div class="slider_item">
+            <img src="images/slick6.png" />
+            <div class="mask_text">
+              <div class="caption">NIMIL様 / 看板制作</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- product ここまで -->
+    <!-- company -->
+    <div class="company" id="company">
+      <!--  concept-section -->
+      <section class="intro-sec">
+        <div class="intro-img">
+          <div class="title_wrap">
+            <h2>会社概要</h2>
+            <span>COMPANY</span>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <div class="company-wrapper">
+        <div class="company-info">
+          <table>
+            <tbody>
+              <tr>
+                <th>社名</th>
+                <td>有限会社アドテック</td>
+              </tr>
+              <tr>
+                <th>本社</th>
+                <td>〒581-0854 大阪府八尾市大竹6-189</td>
+              </tr>
+              <tr>
+                <th>TEL/FAX</th>
+                <td>TEL.072-941-4840 / FAX.072-941-1376</td>
+              </tr>
+              <tr>
+                <th>代表取締役</th>
+                <td>俵 悟</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ul class="map">
+          <li>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52546.568007317655!2d135.5960772121605!3d34.600102747717415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600126d6c4245e51%3A0x87836ed5e6b000dc!2z77yI5pyJ77yJ44Ki44OJ44OG44OD44Kv!5e0!3m2!1sja!2sjp!4v1648278434442!5m2!1sja!2sjp"
+              width="829"
+              height="300"
+              style="border: 0"
+              frameborder="0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </li>
+          <li>
+            <p>・近鉄信貴山口線腹部川駅から北へ徒歩20分</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- company ここまで -->
+    <!-- contact -->
+    <div class="contact" id="contact">
+      <!--  concept-section -->
+      <section class="intro-sec">
+        <div class="intro-img">
+          <div class="title_wrap">
+            <h2>お問い合わせ</h2>
+            <span>CONTACT </span>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <div class="contact-box">
+        <div class="img-box">
+          <img src="images/contact-email.png" />
+          <img src="images/contact-line.png" />
+        </div>
+
+        <div class="btn-box">
+          <a class="mail-btn" href="mailto:daian2525@icloud.com">
+            <p>メールでの<br /><span>お問い合わせ</span></p>
+          </a>
+
+          <a class="line-btn" href="https://lin.ee/weWduNo">
+            <p>LINEでの<br /><span>お問い合わせ</span></p>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-bottom">
+        <div class="original-company"></div>
+        <div class="contact-img">
+          <img src="images/OriginalSignArtCompany.png" />
+        </div>
+      </div>
+    </div>
+    <!-- contact ここまで -->
+    <!-- footer -->
+    <footer>
+      <div class="footer-wrap">
+        <div class="footer-logo">
+          <img src="images/footer-logo.png" />
+        </div>
+
+        <div class="footer-link">
+          <ul class="list">
+            <li><a href="#concept">CONCEPT</a></li>
+            <li><a href="#service">SERVICE</a></li>
+            <li><a href="#product">PRODUCT</a></li>
+            <li><a href="#company">COMPANY</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li class="email-icon">
+              <a href="mailto:daian2525@icloud.com">
+                <img src="images/email-icon.png" alt="手紙の画像" />
+              </a>
+            </li>
+            <li class="line-icon">
+              <a href="https://lin.ee/weWduNO">
+                <img src="images/line-icon.png" alt="LINEの画像" />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="copyright">
+          <small>© 2022 ADTEC Co., Ltd.</small>
+        </div>
+      </div>
+    </footer>
+    <!-- </footer> -->
   </body>
 </html>
