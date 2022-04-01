@@ -1,7 +1,18 @@
 $(function () {
+  let state = false;
+  let pos;
+  $(".hamburger, .globalMenuSp ul li a").click(function () {
+    $(".hamburger").toggleClass("active");
+    if ($(this).hasClass("active")) {
+      $(".globalMenuSp").addClass("active");
+    } else {
+      $(".globalMenuSp").removeClass("active");
+    }
+  });
+});
+
+$(function () {
   $(".slider_wrap").slick({
-    autoplay: true, // 自動再生を設定
-    autoplaySpeed: 3000, // スライド切り替えの時間を設定
     dots: true,
     prevArrow:
       '<img src="images/product-allow-left.png" class="slide-arrow prev-arrow">',
@@ -12,15 +23,17 @@ $(function () {
     dotsClass: "slick-dots",
     responsive: [
       {
-        breakpoint: 1000,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 520,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],

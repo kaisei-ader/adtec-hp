@@ -1,7 +1,16 @@
 // =================共通部分===================
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
+
+  &.fixed {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
 }
 
 ul {
@@ -48,11 +57,30 @@ header {
     line-height: 1;
 
     cursor: pointer;
+
+    @media screen and (max-width: 1024px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      img {
+        width: 50px;
+      }
+    }
+
+    @media screen and (max-width: 520px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      img {
+        width: 40px;
+      }
+    }
   }
 
   .list-menu {
     margin-right: 30px;
     margin-left: auto;
+
+    @media screen and (max-width: 1024px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      display: none;
+    }
 
     .list {
       display: flex;
@@ -97,6 +125,122 @@ header {
       }
     }
   }
+
+  .hamburger {
+    display: none;
+
+    @media screen and (max-width: 1024px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      display: block;
+      position: fixed;
+      z-index: 3;
+      right: 13px;
+      top: 20px;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      text-align: center;
+
+      span {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        left: 6px;
+        background: #fff;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+
+        &:nth-child(1) {
+          top: 10px;
+        }
+        &:nth-child(2) {
+          top: 20px;
+        }
+        &:nth-child(3) {
+          top: 30px;
+        }
+      }
+    }
+
+    &.active {
+      span {
+        &:nth-child(1) {
+          top: 16px;
+          left: 6px;
+          background: #fff;
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          top: 16px;
+          background: #fff;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  .globalMenuSp {
+    display: none;
+    pointer-events: none;
+
+    @media screen and (max-width: 1024px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      display: block;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.9);
+      text-align: center;
+      width: 100%;
+      height: 100vh;
+      opacity: 0;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+
+      ul {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        li {
+          list-style-type: none;
+          padding: 0;
+          width: 100%;
+          transition: 0.4s all;
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+
+          a {
+            display: block;
+            color: #fff;
+            padding: 1em 0;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    &.active {
+      opacity: 100;
+      pointer-events: auto;
+    }
+  }
 }
 
 // ==================main====================
@@ -114,6 +258,13 @@ header {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        height: 550px;
+        background-position: left;
+        background-image: url(../images/sp_top.png);
+      }
     }
 
     h2 {
@@ -125,8 +276,28 @@ header {
       font-size: 50px;
       text-shadow: 2px 6px 8px #282726;
       letter-spacing: 0.1em;
-      line-height: 1.2;
+      line-height: 1.6;
       color: rgb(255, 255, 255);
+
+      @media screen and (max-width: 1024px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        width: 90%;
+        text-align: center;
+        font-size: 40px;
+        line-height: 1.7;
+        top: 42%;
+        transform: translateX(-50%, -42%);
+      }
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        width: 90%;
+        text-align: center;
+        font-size: 24px;
+        line-height: 1.7;
+        top: 50%;
+        transform: translateX(-50%, -50%);
+      }
     }
 
     .white-line {
@@ -154,6 +325,11 @@ header {
     text-align: center;
     padding: 105px 0 115px 0;
 
+    @media screen and (max-width: 520px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      padding-bottom: 75px;
+    }
+
     .title_wrap {
       margin-bottom: 60px;
       color: #3e3a39;
@@ -164,11 +340,23 @@ header {
         font-weight: 600;
         letter-spacing: 0.1em;
         line-height: 1.14;
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          font-size: 30px;
+          margin-bottom: 10px;
+        }
       }
+
       span {
         font-size: 20px;
         font-weight: 600;
         letter-spacing: 0.1em;
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          font-size: 18px;
+        }
       }
     }
 
@@ -178,10 +366,33 @@ header {
       line-height: 1.54;
       color: #3e3a39;
       margin-bottom: 60px;
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        font-size: 16px;
+        letter-spacing: 0.04em;
+        line-height: 1.7;
+      }
+
+      .sp {
+        display: none;
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          display: block;
+        }
+      }
     }
 
     .heading_wrap {
       position: relative;
+
+      img {
+        @media screen and (max-width: 1024px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          width: 100%;
+        }
+      }
 
       h2 {
         position: absolute;
@@ -197,6 +408,26 @@ header {
         text-shadow: 6px 6px 0px #fff, -6px -6px 0px #fff, -6px 6px 0px #fff,
           6px -6px 0px #fff, 6px 0px 0px #fff, -6px -0px 0px #fff,
           0px 6px 0px #fff, 0px -6px 0px #fff;
+
+        @media screen and (max-width: 1024px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          width: 100%;
+          font-size: 46px;
+          letter-spacing: 0.1em;
+          text-shadow: 4px 4px 0px #fff, -4px -4px 0px #fff, -4px 4px 0px #fff,
+            4px -4px 0px #fff, 4px 0px 0px #fff, -4px -0px 0px #fff,
+            0px 4px 0px #fff, 0px -4px 0px #fff;
+        }
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          width: 100%;
+          font-size: 22px;
+          letter-spacing: 0.1em;
+          text-shadow: 4px 4px 0px #fff, -4px -4px 0px #fff, -4px 4px 0px #fff,
+            4px -4px 0px #fff, 4px 0px 0px #fff, -4px -0px 0px #fff,
+            0px 4px 0px #fff, 0px -4px 0px #fff;
+        }
       }
     }
   }
@@ -205,6 +436,12 @@ header {
 .service {
   padding-bottom: 160px;
   width: 100%;
+
+  @media screen and (max-width: 520px) {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 75px;
+  }
+
   .intro-sec {
     position: relative;
 
@@ -215,6 +452,11 @@ header {
       background-position: center;
       background-repeat: no-repeat;
 
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        height: 220px;
+      }
+
       .title_wrap {
         text-align: center;
         position: absolute;
@@ -223,6 +465,13 @@ header {
         left: 50%;
         transform: translate(-50%, -60%);
 
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          top: 52%;
+          left: 50%;
+          transform: translate(-50%, -52%);
+        }
+
         h2 {
           margin: 0 0 15px;
           font-size: 35px;
@@ -230,6 +479,12 @@ header {
           line-height: 1.14;
           color: #ffffff;
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 30px;
+            margin-bottom: 10px;
+          }
         }
 
         span {
@@ -238,6 +493,11 @@ header {
           letter-spacing: 0.1em;
           color: #ffffff;
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 18px;
+          }
         }
       }
     }
@@ -247,13 +507,31 @@ header {
     width: 82%;
     margin: 0 auto;
 
-    .img_flex_1 {
+    @media screen and (max-width: 520px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      width: 90%;
+    }
+
+    .img_flex {
       padding: 90px 0 0 0;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       margin: 0 auto;
+
+      @media screen and (max-width: 1024px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        padding: 100px 0 60px 0;
+        justify-content: space-between;
+      }
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        justify-content: space-between;
+        padding-top: 40px;
+        padding-bottom: 24px;
+      }
 
       .img_box {
         width: 300px;
@@ -262,9 +540,44 @@ header {
         margin-bottom: 50px;
         text-align: center;
 
+        @media screen and (max-width: 1024px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          margin-right: 0;
+          margin-bottom: 20px;
+
+          &:nth-child(3) {
+            width: 100%;
+
+            img {
+              width: 300px;
+            }
+          }
+        }
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          width: 46%;
+          margin-right: 0;
+          margin-bottom: 20px;
+
+          &:nth-child(3) {
+            width: 100%;
+
+            img {
+              width: 160px;
+            }
+          }
+        }
+
         img {
           width: 100%;
           height: 300px;
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            width: 160px;
+            height: auto;
+          }
         }
 
         &:nth-child(3n) {
@@ -273,23 +586,43 @@ header {
 
         &:nth-child(4) {
           margin-left: 95px;
+
+          @media screen and (max-width: 1024px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            margin-left: 0;
+          }
         }
 
         &:nth-child(1) {
           h2 {
             margin-top: 22px;
+
+            @media screen and (max-width: 520px) {
+              /* 520px以下で表示させたいcssを記述していく */
+              margin-top: 10px;
+            }
           }
         }
 
         &:nth-child(3) {
           h2 {
             margin-top: 22px;
+
+            @media screen and (max-width: 520px) {
+              /* 520px以下で表示させたいcssを記述していく */
+              margin-top: 10px;
+            }
           }
         }
 
         &:nth-child(4) {
           h2 {
             margin-top: 22px;
+
+            @media screen and (max-width: 520px) {
+              /* 520px以下で表示させたいcssを記述していく */
+              margin-top: 10px;
+            }
           }
         }
 
@@ -299,6 +632,13 @@ header {
           line-height: 1.32;
           color: #3e3a39;
           margin-top: 15px;
+          margin-bottom: 0;
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 16px;
+            margin-top: 0;
+          }
         }
       }
     }
@@ -307,6 +647,11 @@ header {
   .button_wrap {
     width: 400px;
     margin: 0 auto;
+
+    @media screen and (max-width: 520px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      width: 65%;
+    }
 
     .contact_button {
       display: block;
@@ -324,11 +669,23 @@ header {
       border-radius: 60px;
       cursor: pointer;
 
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        padding: 16px 0;
+        font-size: 18px;
+      }
+
       img {
         position: absolute;
         top: 50%;
         right: 40px;
         transform: translateY(-50%);
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          width: 6px;
+          right: 20px;
+        }
       }
 
       &:hover {
@@ -343,6 +700,11 @@ header {
   padding-bottom: 200px;
   width: 100%;
 
+  @media screen and (max-width: 520px) {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 105px;
+  }
+
   .intro-sec {
     position: relative;
 
@@ -353,6 +715,11 @@ header {
       background-position: center;
       background-repeat: no-repeat;
 
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        height: 220px;
+      }
+
       .title_wrap {
         text-align: center;
         position: absolute;
@@ -361,6 +728,13 @@ header {
         left: 50%;
         transform: translate(-50%, -60%);
 
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          top: 52%;
+          left: 50%;
+          transform: translate(-50%, -52%);
+        }
+
         h2 {
           margin: 0 0 15px;
           font-size: 35px;
@@ -368,6 +742,12 @@ header {
           line-height: 1.14;
           color: #ffffff;
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 30px;
+            margin-bottom: 10px;
+          }
         }
 
         span {
@@ -376,6 +756,11 @@ header {
           letter-spacing: 0.1em;
           color: #ffffff;
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 18px;
+          }
         }
       }
     }
@@ -385,6 +770,16 @@ header {
     width: 100%;
     margin: 0 auto;
     padding: 90px 0 0 0;
+
+    @media screen and (max-width: 1024px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      width: 88%;
+    }
+
+    @media screen and (max-width: 520px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      width: 88%;
+    }
 
     .slider_wrap {
       max-width: 1130px;
@@ -400,6 +795,17 @@ header {
         top: 50%;
         left: -60px;
         transform: translateY(-50%);
+
+        @media screen and (max-width: 1330px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          left: 0;
+        }
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          width: 20px;
+          left: -10px;
+        }
       }
 
       .next-arrow {
@@ -409,6 +815,17 @@ header {
         top: 50%;
         right: -60px;
         transform: translateY(-50%);
+
+        @media screen and (max-width: 1330px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          right: 0;
+        }
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          width: 20px;
+          right: -10px;
+        }
       }
 
       .slick-dots {
@@ -422,6 +839,11 @@ header {
       .slider_item {
         position: relative;
         margin: 0 18px;
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          margin: 0 20px;
+        }
 
         img {
           width: 100%;
@@ -437,6 +859,12 @@ header {
           left: 0;
           background-color: rgba(0, 0, 0, 0.6); /* マスクは半透明 */
 
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            border-radius: 0 0 0 34px;
+            height: 14%;
+          }
+
           .caption {
             height: 100%;
             display: flex;
@@ -446,6 +874,11 @@ header {
             font-weight: 600;
             color: #fff;
             letter-spacing: 0.1em;
+
+            @media screen and (max-width: 520px) {
+              /* 520px以下で表示させたいcssを記述していく */
+              font-size: 18px;
+            }
           }
         }
       }
@@ -457,6 +890,11 @@ header {
   padding-bottom: 160px;
   width: 100%;
 
+  @media screen and (max-width: 520px) {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 75px;
+  }
+
   .intro-sec {
     position: relative;
 
@@ -467,6 +905,11 @@ header {
       background-position: center;
       background-repeat: no-repeat;
 
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        height: 220px;
+      }
+
       .title_wrap {
         text-align: center;
         position: absolute;
@@ -475,6 +918,13 @@ header {
         left: 50%;
         transform: translate(-50%, -60%);
 
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          top: 52%;
+          left: 50%;
+          transform: translate(-50%, -52%);
+        }
+
         h2 {
           margin: 0 0 15px;
           font-size: 35px;
@@ -482,6 +932,12 @@ header {
           line-height: 1.14;
           color: #ffffff;
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 30px;
+            margin-bottom: 10px;
+          }
         }
 
         span {
@@ -490,6 +946,11 @@ header {
           letter-spacing: 0.1em;
           color: #ffffff;
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 18px;
+          }
         }
       }
     }
@@ -504,6 +965,39 @@ header {
       margin: 88px auto 0;
       max-width: 830px;
       width: 100%;
+
+      .sp_wrap {
+        display: none;
+      }
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        margin: 30px auto 0;
+
+        table {
+          display: none;
+        }
+
+        .sp_wrap {
+          display: block;
+
+          dt {
+            font-weight: bold;
+          }
+          dd {
+            margin: 0;
+            color: #3e3a39;
+          }
+          .persons {
+            padding: 15px 5px;
+            border-top: dashed 1px #111;
+
+            &:last-child {
+              border-bottom: dashed 1px #111;
+            }
+          }
+        }
+      }
 
       tr {
         th {
@@ -538,16 +1032,32 @@ header {
     }
 
     .map {
+      width: 100%;
       margin-top: 52px;
       max-width: 830px;
       margin: 50px auto 0;
       padding: 0;
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        margin-top: 30px;
+
+        iframe {
+          height: 200px;
+        }
+      }
 
       p {
         margin-top: 14px;
         font-size: 22px;
         letter-spacing: 0.1em;
         color: #3e3a39;
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          font-size: 14px;
+          margin-top: 4px;
+        }
       }
     }
   }
@@ -556,6 +1066,11 @@ header {
 .contact {
   padding-bottom: 350px;
   width: 100%;
+
+  @media screen and (max-width: 520px) {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 220px;
+  }
 
   .intro-sec {
     position: relative;
@@ -567,6 +1082,11 @@ header {
       background-position: center;
       background-repeat: no-repeat;
 
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        height: 220px;
+      }
+
       .title_wrap {
         text-align: center;
         position: absolute;
@@ -575,6 +1095,13 @@ header {
         left: 50%;
         transform: translate(-50%, -60%);
 
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          top: 52%;
+          left: 50%;
+          transform: translate(-50%, -52%);
+        }
+
         h2 {
           margin: 0 0 15px;
           font-size: 35px;
@@ -582,6 +1109,12 @@ header {
           line-height: 1.14;
           color: #ffffff;
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 30px;
+            margin-bottom: 10px;
+          }
         }
 
         span {
@@ -590,6 +1123,11 @@ header {
           letter-spacing: 0.1em;
           color: #ffffff;
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 18px;
+          }
         }
       }
     }
@@ -598,6 +1136,12 @@ header {
   .contact-box {
     margin-top: 80px;
 
+    @media screen and (max-width: 520px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      padding: 0 30px;
+      margin-top: 40px;
+    }
+
     .img-box {
       display: flex;
       align-items: center;
@@ -605,6 +1149,13 @@ header {
       max-width: 600px;
       width: 100%;
       margin: auto;
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        img {
+          width: 50px;
+        }
+      }
     }
 
     .btn-box {
@@ -624,6 +1175,13 @@ header {
           margin-top: 30px;
           text-align: center;
           color: #3e3a39;
+
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -632,6 +1190,11 @@ header {
   .contact-bottom {
     margin-top: 150px;
     position: relative;
+
+    @media screen and (max-width: 520px) {
+      /* 520px以下で表示させたいcssを記述していく */
+      margin-top: 90px;
+    }
 
     .original-company {
       background-image: url(../images/contact-bottom.png);
@@ -645,6 +1208,11 @@ header {
       bottom: 0;
       right: 0;
       z-index: 2;
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        height: 220px;
+      }
     }
     .contact-img {
       position: absolute;
@@ -653,6 +1221,11 @@ header {
       z-index: 1;
       width: 100%;
       text-align: center;
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        bottom: -11px;
+      }
 
       img {
         width: 100%;
@@ -672,12 +1245,25 @@ footer {
     .footer-logo {
       text-align: center;
       padding-top: 64px;
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        padding-top: 36px;
+
+        img {
+          width: 50px;
+        }
+      }
     }
 
     .footer-link {
       padding-top: 56px;
-
       margin-left: auto;
+
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        padding-top: 24px;
+      }
 
       .list {
         display: flex;
@@ -685,6 +1271,13 @@ footer {
         justify-content: center;
         line-height: 2.2;
         margin-top: 0;
+        padding: 0;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          width: 100%;
+        }
 
         li {
           font-size: 18px;
@@ -694,28 +1287,64 @@ footer {
           position: relative;
           cursor: pointer;
 
+          @media screen and (max-width: 520px) {
+            /* 520px以下で表示させたいcssを記述していく */
+            margin-right: 14px;
+            margin-left: 14px;
+            font-size: 14px;
+          }
+
           &:nth-child(5) {
             margin-right: 30px;
+
+            @media screen and (max-width: 520px) {
+              /* 520px以下で表示させたいcssを記述していく */
+              margin-right: 10px;
+            }
           }
 
           &.email-icon {
             margin-right: 19px;
             margin-top: 5px;
+
+            @media screen and (max-width: 520px) {
+              /* 520px以下で表示させたいcssを記述していく */
+              margin-right: 4px;
+
+              img {
+                width: 18px;
+              }
+            }
           }
+
           &.line-icon {
             margin-right: 0;
             margin-top: 12px;
+
+            @media screen and (max-width: 520px) {
+              /* 520px以下で表示させたいcssを記述していく */
+              margin-top: 8px;
+
+              img {
+                width: 18px;
+              }
+            }
           }
 
           &::after {
             content: "";
             width: 2px;
-
             height: 22px;
             background-color: rgb(255, 255, 255);
             position: absolute;
             top: 9px;
             right: -25px;
+
+            @media screen and (max-width: 520px) {
+              /* 520px以下で表示させたいcssを記述していく */
+              top: 4px;
+              right: -14px;
+            }
           }
 
           &:nth-child(5)::after,
@@ -732,12 +1361,31 @@ footer {
       padding-bottom: 50px;
       text-align: center;
 
+      @media screen and (max-width: 520px) {
+        /* 520px以下で表示させたいcssを記述していく */
+        padding-bottom: 14px;
+        padding-top: 10px;
+      }
+
       small {
         font-size: 18px;
         letter-spacing: 0.1em;
         font-weight: 550;
         color: #ffffff;
+
+        @media screen and (max-width: 520px) {
+          /* 520px以下で表示させたいcssを記述していく */
+          font-size: 12px;
+        }
       }
     }
   }
+}
+
+#service,
+#product,
+#company,
+#contact {
+  padding-top: 80px;
+  margin-top: -80px;
 }

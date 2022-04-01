@@ -1,7 +1,17 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
+}
+
+body.fixed {
+  width: 100%;
+  height: 100%;
+  position: fixed;
 }
 
 ul {
@@ -51,9 +61,34 @@ header .adtec-logo {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1024px) {
+  header .adtec-logo {
+    /* 520px以下で表示させたいcssを記述していく */
+  }
+  header .adtec-logo img {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  header .adtec-logo {
+    /* 520px以下で表示させたいcssを記述していく */
+  }
+  header .adtec-logo img {
+    width: 40px;
+  }
+}
+
 header .list-menu {
   margin-right: 30px;
   margin-left: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  header .list-menu {
+    /* 520px以下で表示させたいcssを記述していく */
+    display: none;
+  }
 }
 
 header .list-menu .list {
@@ -100,6 +135,123 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   display: none;
 }
 
+header .hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  header .hamburger {
+    /* 520px以下で表示させたいcssを記述していく */
+    display: block;
+    position: fixed;
+    z-index: 3;
+    right: 13px;
+    top: 20px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+  }
+  header .hamburger span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    left: 6px;
+    background: #fff;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  header .hamburger span:nth-child(1) {
+    top: 10px;
+  }
+  header .hamburger span:nth-child(2) {
+    top: 20px;
+  }
+  header .hamburger span:nth-child(3) {
+    top: 30px;
+  }
+}
+
+header .hamburger.active span:nth-child(1) {
+  top: 16px;
+  left: 6px;
+  background: #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+header .hamburger.active span:nth-child(2), header .hamburger.active span:nth-child(3) {
+  top: 16px;
+  background: #fff;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+header .globalMenuSp {
+  display: none;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1024px) {
+  header .globalMenuSp {
+    /* 520px以下で表示させたいcssを記述していく */
+    display: block;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease, visibility 0.6s ease;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+  header .globalMenuSp ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    -webkit-transition: 0.4s all;
+    transition: 0.4s all;
+  }
+  header .globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+  }
+  header .globalMenuSp ul li a {
+    display: block;
+    color: #fff;
+    padding: 1em 0;
+    text-decoration: none;
+  }
+}
+
+header .globalMenuSp.active {
+  opacity: 100;
+  pointer-events: auto;
+}
+
 .main {
   margin-top: 80px;
   width: 100%;
@@ -118,6 +270,15 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 520px) {
+  .main .intro-sec .intro-img {
+    /* 520px以下で表示させたいcssを記述していく */
+    height: 550px;
+    background-position: left;
+    background-image: url(../images/sp_top.png);
+  }
+}
+
 .main .intro-sec h2 {
   position: absolute;
   top: 40%;
@@ -128,8 +289,34 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   font-size: 50px;
   text-shadow: 2px 6px 8px #282726;
   letter-spacing: 0.1em;
-  line-height: 1.2;
+  line-height: 1.6;
   color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .main .intro-sec h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 90%;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.7;
+    top: 42%;
+    -webkit-transform: translateX(-50%, -42%);
+            transform: translateX(-50%, -42%);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .main .intro-sec h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 90%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.7;
+    top: 50%;
+    -webkit-transform: translateX(-50%, -50%);
+            transform: translateX(-50%, -50%);
+  }
 }
 
 .main .intro-sec .white-line {
@@ -156,6 +343,13 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   padding: 105px 0 115px 0;
 }
 
+@media screen and (max-width: 520px) {
+  .main .concept-sec {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 75px;
+  }
+}
+
 .main .concept-sec .title_wrap {
   margin-bottom: 60px;
   color: #3e3a39;
@@ -169,10 +363,25 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   line-height: 1.14;
 }
 
+@media screen and (max-width: 520px) {
+  .main .concept-sec .title_wrap h1 {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
 .main .concept-sec .title_wrap span {
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.1em;
+}
+
+@media screen and (max-width: 520px) {
+  .main .concept-sec .title_wrap span {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 18px;
+  }
 }
 
 .main .concept-sec p {
@@ -183,8 +392,35 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   margin-bottom: 60px;
 }
 
+@media screen and (max-width: 520px) {
+  .main .concept-sec p {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+  }
+}
+
+.main .concept-sec p .sp {
+  display: none;
+}
+
+@media screen and (max-width: 520px) {
+  .main .concept-sec p .sp {
+    /* 520px以下で表示させたいcssを記述していく */
+    display: block;
+  }
+}
+
 .main .concept-sec .heading_wrap {
   position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .main .concept-sec .heading_wrap img {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 100%;
+  }
 }
 
 .main .concept-sec .heading_wrap h2 {
@@ -202,9 +438,36 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   text-shadow: 6px 6px 0px #fff, -6px -6px 0px #fff, -6px 6px 0px #fff, 6px -6px 0px #fff, 6px 0px 0px #fff, -6px -0px 0px #fff, 0px 6px 0px #fff, 0px -6px 0px #fff;
 }
 
+@media screen and (max-width: 1024px) {
+  .main .concept-sec .heading_wrap h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 100%;
+    font-size: 46px;
+    letter-spacing: 0.1em;
+    text-shadow: 4px 4px 0px #fff, -4px -4px 0px #fff, -4px 4px 0px #fff, 4px -4px 0px #fff, 4px 0px 0px #fff, -4px -0px 0px #fff, 0px 4px 0px #fff, 0px -4px 0px #fff;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .main .concept-sec .heading_wrap h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 100%;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    text-shadow: 4px 4px 0px #fff, -4px -4px 0px #fff, -4px 4px 0px #fff, 4px -4px 0px #fff, 4px 0px 0px #fff, -4px -0px 0px #fff, 0px 4px 0px #fff, 0px -4px 0px #fff;
+  }
+}
+
 .service {
   padding-bottom: 160px;
   width: 100%;
+}
+
+@media screen and (max-width: 520px) {
+  .service {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 75px;
+  }
 }
 
 .service .intro-sec {
@@ -219,6 +482,13 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 520px) {
+  .service .intro-sec .intro-img {
+    /* 520px以下で表示させたいcssを記述していく */
+    height: 220px;
+  }
+}
+
 .service .intro-sec .intro-img .title_wrap {
   text-align: center;
   position: absolute;
@@ -227,6 +497,16 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   left: 50%;
   -webkit-transform: translate(-50%, -60%);
           transform: translate(-50%, -60%);
+}
+
+@media screen and (max-width: 520px) {
+  .service .intro-sec .intro-img .title_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    top: 52%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -52%);
+            transform: translate(-50%, -52%);
+  }
 }
 
 .service .intro-sec .intro-img .title_wrap h2 {
@@ -238,6 +518,14 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   text-shadow: 1px 1px 2px black;
 }
 
+@media screen and (max-width: 520px) {
+  .service .intro-sec .intro-img .title_wrap h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
 .service .intro-sec .intro-img .title_wrap span {
   font-size: 20px;
   font-weight: 600;
@@ -246,12 +534,26 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   text-shadow: 1px 1px 2px black;
 }
 
+@media screen and (max-width: 520px) {
+  .service .intro-sec .intro-img .title_wrap span {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 18px;
+  }
+}
+
 .service .img_wrap {
   width: 82%;
   margin: 0 auto;
 }
 
-.service .img_wrap .img_flex_1 {
+@media screen and (max-width: 520px) {
+  .service .img_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 90%;
+  }
+}
+
+.service .img_wrap .img_flex {
   padding: 90px 0 0 0;
   width: 100%;
   display: -webkit-box;
@@ -265,7 +567,28 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   margin: 0 auto;
 }
 
-.service .img_wrap .img_flex_1 .img_box {
+@media screen and (max-width: 1024px) {
+  .service .img_wrap .img_flex {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding: 100px 0 60px 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .service .img_wrap .img_flex {
+    /* 520px以下で表示させたいcssを記述していく */
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 24px;
+  }
+}
+
+.service .img_wrap .img_flex .img_box {
   width: 300px;
   border-radius: 50%;
   margin-right: 95px;
@@ -273,42 +596,123 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   text-align: center;
 }
 
-.service .img_wrap .img_flex_1 .img_box img {
+@media screen and (max-width: 1024px) {
+  .service .img_wrap .img_flex .img_box {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) {
+    width: 100%;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) img {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .service .img_wrap .img_flex .img_box {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 46%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) {
+    width: 100%;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) img {
+    width: 160px;
+  }
+}
+
+.service .img_wrap .img_flex .img_box img {
   width: 100%;
   height: 300px;
 }
 
-.service .img_wrap .img_flex_1 .img_box:nth-child(3n) {
+@media screen and (max-width: 520px) {
+  .service .img_wrap .img_flex .img_box img {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 160px;
+    height: auto;
+  }
+}
+
+.service .img_wrap .img_flex .img_box:nth-child(3n) {
   margin-right: 0;
 }
 
-.service .img_wrap .img_flex_1 .img_box:nth-child(4) {
+.service .img_wrap .img_flex .img_box:nth-child(4) {
   margin-left: 95px;
 }
 
-.service .img_wrap .img_flex_1 .img_box:nth-child(1) h2 {
+@media screen and (max-width: 1024px) {
+  .service .img_wrap .img_flex .img_box:nth-child(4) {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-left: 0;
+  }
+}
+
+.service .img_wrap .img_flex .img_box:nth-child(1) h2 {
   margin-top: 22px;
 }
 
-.service .img_wrap .img_flex_1 .img_box:nth-child(3) h2 {
+@media screen and (max-width: 520px) {
+  .service .img_wrap .img_flex .img_box:nth-child(1) h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-top: 10px;
+  }
+}
+
+.service .img_wrap .img_flex .img_box:nth-child(3) h2 {
   margin-top: 22px;
 }
 
-.service .img_wrap .img_flex_1 .img_box:nth-child(4) h2 {
+@media screen and (max-width: 520px) {
+  .service .img_wrap .img_flex .img_box:nth-child(3) h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-top: 10px;
+  }
+}
+
+.service .img_wrap .img_flex .img_box:nth-child(4) h2 {
   margin-top: 22px;
 }
 
-.service .img_wrap .img_flex_1 .img_box h2 {
+@media screen and (max-width: 520px) {
+  .service .img_wrap .img_flex .img_box:nth-child(4) h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-top: 10px;
+  }
+}
+
+.service .img_wrap .img_flex .img_box h2 {
   font-size: 25px;
   letter-spacing: 0.1em;
   line-height: 1.32;
   color: #3e3a39;
   margin-top: 15px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 520px) {
+  .service .img_wrap .img_flex .img_box h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 16px;
+    margin-top: 0;
+  }
 }
 
 .service .button_wrap {
   width: 400px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 520px) {
+  .service .button_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 65%;
+  }
 }
 
 .service .button_wrap .contact_button {
@@ -328,12 +732,28 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   cursor: pointer;
 }
 
+@media screen and (max-width: 520px) {
+  .service .button_wrap .contact_button {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding: 16px 0;
+    font-size: 18px;
+  }
+}
+
 .service .button_wrap .contact_button img {
   position: absolute;
   top: 50%;
   right: 40px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@media screen and (max-width: 520px) {
+  .service .button_wrap .contact_button img {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 6px;
+    right: 20px;
+  }
 }
 
 .service .button_wrap .contact_button:hover {
@@ -345,6 +765,13 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
 .product {
   padding-bottom: 200px;
   width: 100%;
+}
+
+@media screen and (max-width: 520px) {
+  .product {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 105px;
+  }
 }
 
 .product .intro-sec {
@@ -359,6 +786,13 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 520px) {
+  .product .intro-sec .intro-img {
+    /* 520px以下で表示させたいcssを記述していく */
+    height: 220px;
+  }
+}
+
 .product .intro-sec .intro-img .title_wrap {
   text-align: center;
   position: absolute;
@@ -367,6 +801,16 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   left: 50%;
   -webkit-transform: translate(-50%, -60%);
           transform: translate(-50%, -60%);
+}
+
+@media screen and (max-width: 520px) {
+  .product .intro-sec .intro-img .title_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    top: 52%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -52%);
+            transform: translate(-50%, -52%);
+  }
 }
 
 .product .intro-sec .intro-img .title_wrap h2 {
@@ -378,6 +822,14 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   text-shadow: 1px 1px 2px black;
 }
 
+@media screen and (max-width: 520px) {
+  .product .intro-sec .intro-img .title_wrap h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
 .product .intro-sec .intro-img .title_wrap span {
   font-size: 20px;
   font-weight: 600;
@@ -386,10 +838,31 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   text-shadow: 1px 1px 2px black;
 }
 
+@media screen and (max-width: 520px) {
+  .product .intro-sec .intro-img .title_wrap span {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 18px;
+  }
+}
+
 .product .slider_area {
   width: 100%;
   margin: 0 auto;
   padding: 90px 0 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .product .slider_area {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 88%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .product .slider_area {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 88%;
+  }
 }
 
 .product .slider_area .slider_wrap {
@@ -413,6 +886,21 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
           transform: translateY(-50%);
 }
 
+@media screen and (max-width: 1330px) {
+  .product .slider_area .slider_wrap .prev-arrow {
+    /* 520px以下で表示させたいcssを記述していく */
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .product .slider_area .slider_wrap .prev-arrow {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 20px;
+    left: -10px;
+  }
+}
+
 .product .slider_area .slider_wrap .next-arrow {
   cursor: pointer;
   position: absolute;
@@ -421,6 +909,21 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   right: -60px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1330px) {
+  .product .slider_area .slider_wrap .next-arrow {
+    /* 520px以下で表示させたいcssを記述していく */
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .product .slider_area .slider_wrap .next-arrow {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 20px;
+    right: -10px;
+  }
 }
 
 .product .slider_area .slider_wrap .slick-dots {
@@ -434,6 +937,13 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
 .product .slider_area .slider_wrap .slider_item {
   position: relative;
   margin: 0 18px;
+}
+
+@media screen and (max-width: 520px) {
+  .product .slider_area .slider_wrap .slider_item {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin: 0 20px;
+  }
 }
 
 .product .slider_area .slider_wrap .slider_item img {
@@ -453,6 +963,14 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   /* マスクは半透明 */
 }
 
+@media screen and (max-width: 520px) {
+  .product .slider_area .slider_wrap .slider_item .mask_text {
+    /* 520px以下で表示させたいcssを記述していく */
+    border-radius: 0 0 0 34px;
+    height: 14%;
+  }
+}
+
 .product .slider_area .slider_wrap .slider_item .mask_text .caption {
   height: 100%;
   display: -webkit-box;
@@ -470,9 +988,23 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   letter-spacing: 0.1em;
 }
 
+@media screen and (max-width: 520px) {
+  .product .slider_area .slider_wrap .slider_item .mask_text .caption {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 18px;
+  }
+}
+
 .company {
   padding-bottom: 160px;
   width: 100%;
+}
+
+@media screen and (max-width: 520px) {
+  .company {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 75px;
+  }
 }
 
 .company .intro-sec {
@@ -487,6 +1019,13 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 520px) {
+  .company .intro-sec .intro-img {
+    /* 520px以下で表示させたいcssを記述していく */
+    height: 220px;
+  }
+}
+
 .company .intro-sec .intro-img .title_wrap {
   text-align: center;
   position: absolute;
@@ -495,6 +1034,16 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   left: 50%;
   -webkit-transform: translate(-50%, -60%);
           transform: translate(-50%, -60%);
+}
+
+@media screen and (max-width: 520px) {
+  .company .intro-sec .intro-img .title_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    top: 52%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -52%);
+            transform: translate(-50%, -52%);
+  }
 }
 
 .company .intro-sec .intro-img .title_wrap h2 {
@@ -506,12 +1055,27 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   text-shadow: 1px 1px 2px black;
 }
 
+@media screen and (max-width: 520px) {
+  .company .intro-sec .intro-img .title_wrap h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
 .company .intro-sec .intro-img .title_wrap span {
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: #ffffff;
   text-shadow: 1px 1px 2px black;
+}
+
+@media screen and (max-width: 520px) {
+  .company .intro-sec .intro-img .title_wrap span {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 18px;
+  }
 }
 
 .company .company-wrapper {
@@ -524,6 +1088,37 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   margin: 88px auto 0;
   max-width: 830px;
   width: 100%;
+}
+
+.company .company-wrapper .company-info .sp_wrap {
+  display: none;
+}
+
+@media screen and (max-width: 520px) {
+  .company .company-wrapper .company-info {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin: 30px auto 0;
+  }
+  .company .company-wrapper .company-info table {
+    display: none;
+  }
+  .company .company-wrapper .company-info .sp_wrap {
+    display: block;
+  }
+  .company .company-wrapper .company-info .sp_wrap dt {
+    font-weight: bold;
+  }
+  .company .company-wrapper .company-info .sp_wrap dd {
+    margin: 0;
+    color: #3e3a39;
+  }
+  .company .company-wrapper .company-info .sp_wrap .persons {
+    padding: 15px 5px;
+    border-top: dashed 1px #111;
+  }
+  .company .company-wrapper .company-info .sp_wrap .persons:last-child {
+    border-bottom: dashed 1px #111;
+  }
 }
 
 .company .company-wrapper .company-info tr th {
@@ -555,10 +1150,21 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
 }
 
 .company .company-wrapper .map {
+  width: 100%;
   margin-top: 52px;
   max-width: 830px;
   margin: 50px auto 0;
   padding: 0;
+}
+
+@media screen and (max-width: 520px) {
+  .company .company-wrapper .map {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-top: 30px;
+  }
+  .company .company-wrapper .map iframe {
+    height: 200px;
+  }
 }
 
 .company .company-wrapper .map p {
@@ -568,9 +1174,24 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   color: #3e3a39;
 }
 
+@media screen and (max-width: 520px) {
+  .company .company-wrapper .map p {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}
+
 .contact {
   padding-bottom: 350px;
   width: 100%;
+}
+
+@media screen and (max-width: 520px) {
+  .contact {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 220px;
+  }
 }
 
 .contact .intro-sec {
@@ -585,6 +1206,13 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 520px) {
+  .contact .intro-sec .intro-img {
+    /* 520px以下で表示させたいcssを記述していく */
+    height: 220px;
+  }
+}
+
 .contact .intro-sec .intro-img .title_wrap {
   text-align: center;
   position: absolute;
@@ -593,6 +1221,16 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   left: 50%;
   -webkit-transform: translate(-50%, -60%);
           transform: translate(-50%, -60%);
+}
+
+@media screen and (max-width: 520px) {
+  .contact .intro-sec .intro-img .title_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    top: 52%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -52%);
+            transform: translate(-50%, -52%);
+  }
 }
 
 .contact .intro-sec .intro-img .title_wrap h2 {
@@ -604,6 +1242,14 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   text-shadow: 1px 1px 2px black;
 }
 
+@media screen and (max-width: 520px) {
+  .contact .intro-sec .intro-img .title_wrap h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
 .contact .intro-sec .intro-img .title_wrap span {
   font-size: 20px;
   font-weight: 600;
@@ -612,8 +1258,23 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   text-shadow: 1px 1px 2px black;
 }
 
+@media screen and (max-width: 520px) {
+  .contact .intro-sec .intro-img .title_wrap span {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 18px;
+  }
+}
+
 .contact .contact-box {
   margin-top: 80px;
+}
+
+@media screen and (max-width: 520px) {
+  .contact .contact-box {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding: 0 30px;
+    margin-top: 40px;
+  }
 }
 
 .contact .contact-box .img-box {
@@ -628,6 +1289,15 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   max-width: 600px;
   width: 100%;
   margin: auto;
+}
+
+@media screen and (max-width: 520px) {
+  .contact .contact-box .img-box {
+    /* 520px以下で表示させたいcssを記述していく */
+  }
+  .contact .contact-box .img-box img {
+    width: 50px;
+  }
 }
 
 .contact .contact-box .btn-box {
@@ -656,9 +1326,25 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   color: #3e3a39;
 }
 
+@media screen and (max-width: 520px) {
+  .contact .contact-box .btn-box a p {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
+
 .contact .contact-bottom {
   margin-top: 150px;
   position: relative;
+}
+
+@media screen and (max-width: 520px) {
+  .contact .contact-bottom {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-top: 90px;
+  }
 }
 
 .contact .contact-bottom .original-company {
@@ -675,6 +1361,13 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   z-index: 2;
 }
 
+@media screen and (max-width: 520px) {
+  .contact .contact-bottom .original-company {
+    /* 520px以下で表示させたいcssを記述していく */
+    height: 220px;
+  }
+}
+
 .contact .contact-bottom .contact-img {
   position: absolute;
   bottom: -25px;
@@ -682,6 +1375,13 @@ header .list-menu .list li:nth-child(5)::after, header .list-menu .list li:nth-c
   z-index: 1;
   width: 100%;
   text-align: center;
+}
+
+@media screen and (max-width: 520px) {
+  .contact .contact-bottom .contact-img {
+    /* 520px以下で表示させたいcssを記述していく */
+    bottom: -11px;
+  }
 }
 
 .contact .contact-bottom .contact-img img {
@@ -703,9 +1403,26 @@ footer .footer-wrap .footer-logo {
   padding-top: 64px;
 }
 
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .footer-logo {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-top: 36px;
+  }
+  footer .footer-wrap .footer-logo img {
+    width: 50px;
+  }
+}
+
 footer .footer-wrap .footer-link {
   padding-top: 56px;
   margin-left: auto;
+}
+
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .footer-link {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-top: 24px;
+  }
 }
 
 footer .footer-wrap .footer-link .list {
@@ -720,6 +1437,16 @@ footer .footer-wrap .footer-link .list {
           justify-content: center;
   line-height: 2.2;
   margin-top: 0;
+  padding: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .footer-link .list {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 100%;
+  }
 }
 
 footer .footer-wrap .footer-link .list li {
@@ -731,8 +1458,24 @@ footer .footer-wrap .footer-link .list li {
   cursor: pointer;
 }
 
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .footer-link .list li {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-right: 14px;
+    margin-left: 14px;
+    font-size: 14px;
+  }
+}
+
 footer .footer-wrap .footer-link .list li:nth-child(5) {
   margin-right: 30px;
+}
+
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .footer-link .list li:nth-child(5) {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-right: 10px;
+  }
 }
 
 footer .footer-wrap .footer-link .list li.email-icon {
@@ -740,9 +1483,29 @@ footer .footer-wrap .footer-link .list li.email-icon {
   margin-top: 5px;
 }
 
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .footer-link .list li.email-icon {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-right: 4px;
+  }
+  footer .footer-wrap .footer-link .list li.email-icon img {
+    width: 18px;
+  }
+}
+
 footer .footer-wrap .footer-link .list li.line-icon {
   margin-right: 0;
   margin-top: 12px;
+}
+
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .footer-link .list li.line-icon {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-top: 8px;
+  }
+  footer .footer-wrap .footer-link .list li.line-icon img {
+    width: 18px;
+  }
 }
 
 footer .footer-wrap .footer-link .list li::after {
@@ -755,6 +1518,14 @@ footer .footer-wrap .footer-link .list li::after {
   right: -25px;
 }
 
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .footer-link .list li::after {
+    /* 520px以下で表示させたいcssを記述していく */
+    top: 4px;
+    right: -14px;
+  }
+}
+
 footer .footer-wrap .footer-link .list li:nth-child(5)::after, footer .footer-wrap .footer-link .list li:nth-child(6)::after, footer .footer-wrap .footer-link .list li:nth-child(7)::after {
   display: none;
 }
@@ -765,10 +1536,33 @@ footer .footer-wrap .copyright {
   text-align: center;
 }
 
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .copyright {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 14px;
+    padding-top: 10px;
+  }
+}
+
 footer .footer-wrap .copyright small {
   font-size: 18px;
   letter-spacing: 0.1em;
   font-weight: 550;
   color: #ffffff;
+}
+
+@media screen and (max-width: 520px) {
+  footer .footer-wrap .copyright small {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 12px;
+  }
+}
+
+#service,
+#product,
+#company,
+#contact {
+  padding-top: 80px;
+  margin-top: -80px;
 }
 /*# sourceMappingURL=style.css.map */
