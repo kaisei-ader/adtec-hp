@@ -270,6 +270,15 @@ header .globalMenuSp.active {
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 768px) {
+  .main .intro-sec .intro-img {
+    /* 520px以下で表示させたいcssを記述していく */
+    height: 600px;
+    background-position: left;
+    background-image: url(../images/sp_top.png);
+  }
+}
+
 @media screen and (max-width: 520px) {
   .main .intro-sec .intro-img {
     /* 520px以下で表示させたいcssを記述していく */
@@ -943,6 +952,13 @@ header .globalMenuSp.active {
   }
 }
 
+@media screen and (max-width: 520px) {
+  .product {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding-bottom: 55px;
+  }
+}
+
 .product .intro-sec {
   position: relative;
 }
@@ -1020,7 +1036,7 @@ header .globalMenuSp.active {
   padding: 90px 0 0 0;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1330px) {
   .product .slider_area {
     /* 520px以下で表示させたいcssを記述していく */
     width: 88%;
@@ -1134,6 +1150,13 @@ header .globalMenuSp.active {
   bottom: -50px !important;
 }
 
+@media screen and (max-width: 375px) {
+  .product .slider_area .slider_wrap .slick-dots {
+    /* 520px以下で表示させたいcssを記述していく */
+    bottom: -10px !important;
+  }
+}
+
 .product .slider_area .slider_wrap .slick-dots li button:before {
   font-size: 18px;
 }
@@ -1153,6 +1176,13 @@ header .globalMenuSp.active {
 .product .slider_area .slider_wrap .slider_item img {
   width: 100%;
   height: 400px;
+}
+
+@media screen and (max-width: 520px) {
+  .product .slider_area .slider_wrap .slider_item img {
+    /* 520px以下で表示させたいcssを記述していく */
+    height: 310px;
+  }
 }
 
 .product .slider_area .slider_wrap .slider_item .mask_text {
@@ -1579,6 +1609,20 @@ header .globalMenuSp.active {
   z-index: 1;
   width: 100%;
   text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .contact .contact-bottom .contact-img {
+    /* 520px以下で表示させたいcssを記述していく */
+    bottom: -18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact .contact-bottom .contact-img {
+    /* 520px以下で表示させたいcssを記述していく */
+    bottom: -15px;
+  }
 }
 
 @media screen and (max-width: 520px) {

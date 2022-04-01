@@ -13,6 +13,8 @@ $(function () {
 
 $(function () {
   $(".slider_wrap").slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
     dots: true,
     prevArrow:
       '<img src="images/product-allow-left.png" class="slide-arrow prev-arrow">',
