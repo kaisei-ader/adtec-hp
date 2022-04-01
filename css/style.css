@@ -293,6 +293,19 @@ header .globalMenuSp.active {
   color: white;
 }
 
+@media screen and (max-width: 1330px) {
+  .main .intro-sec h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 90%;
+    text-align: center;
+    font-size: 42px;
+    line-height: 1.7;
+    top: 42%;
+    -webkit-transform: translateX(-50%, -42%);
+            transform: translateX(-50%, -42%);
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .main .intro-sec h2 {
     /* 520px以下で表示させたいcssを記述していく */
@@ -306,12 +319,38 @@ header .globalMenuSp.active {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .main .intro-sec h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 80%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.8;
+    top: 42%;
+    -webkit-transform: translateX(-50%, -42%);
+            transform: translateX(-50%, -42%);
+  }
+}
+
 @media screen and (max-width: 520px) {
   .main .intro-sec h2 {
     /* 520px以下で表示させたいcssを記述していく */
     width: 90%;
     text-align: center;
     font-size: 24px;
+    line-height: 1.7;
+    top: 50%;
+    -webkit-transform: translateX(-50%, -50%);
+            transform: translateX(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .main .intro-sec h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 90%;
+    text-align: center;
+    font-size: 20px;
     line-height: 1.7;
     top: 50%;
     -webkit-transform: translateX(-50%, -50%);
@@ -401,6 +440,13 @@ header .globalMenuSp.active {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .main .concept-sec p {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 12px;
+  }
+}
+
 .main .concept-sec p .sp {
   display: none;
 }
@@ -448,13 +494,30 @@ header .globalMenuSp.active {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .main .concept-sec .heading_wrap h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 100%;
+    font-size: 34px;
+    letter-spacing: 0.1em;
+    text-shadow: 4px 4px 0px #fff, -4px -4px 0px #fff, -4px 4px 0px #fff, 4px -4px 0px #fff, 4px 0px 0px #fff, -4px -0px 0px #fff, 0px 4px 0px #fff, 0px -4px 0px #fff;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .main .concept-sec .heading_wrap h2 {
     /* 520px以下で表示させたいcssを記述していく */
     width: 100%;
-    font-size: 22px;
+    font-size: 24px;
     letter-spacing: 0.1em;
     text-shadow: 4px 4px 0px #fff, -4px -4px 0px #fff, -4px 4px 0px #fff, 4px -4px 0px #fff, 4px 0px 0px #fff, -4px -0px 0px #fff, 0px 4px 0px #fff, 0px -4px 0px #fff;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .main .concept-sec .heading_wrap h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 20px;
   }
 }
 
@@ -546,6 +609,27 @@ header .globalMenuSp.active {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1330px) {
+  .service .img_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 72%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .service .img_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .service .img_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .service .img_wrap {
     /* 520px以下で表示させたいcssを記述していく */
@@ -565,6 +649,16 @@ header .globalMenuSp.active {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1330px) {
+  .service .img_wrap .img_flex {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding: 100px 0 60px 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -596,6 +690,20 @@ header .globalMenuSp.active {
   text-align: center;
 }
 
+@media screen and (max-width: 1330px) {
+  .service .img_wrap .img_flex .img_box {
+    /* 520px以下で表示させたいcssを記述していく */
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) {
+    width: 100%;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) img {
+    width: 300px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .service .img_wrap .img_flex .img_box {
     /* 520px以下で表示させたいcssを記述していく */
@@ -607,6 +715,21 @@ header .globalMenuSp.active {
   }
   .service .img_wrap .img_flex .img_box:nth-child(3) img {
     width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .service .img_wrap .img_flex .img_box {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 44%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) {
+    width: 100%;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) img {
+    width: 220px;
   }
 }
 
@@ -625,15 +748,46 @@ header .globalMenuSp.active {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .service .img_wrap .img_flex .img_box {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 46%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) {
+    width: 100%;
+  }
+  .service .img_wrap .img_flex .img_box:nth-child(3) img {
+    width: 120px;
+  }
+}
+
 .service .img_wrap .img_flex .img_box img {
   width: 100%;
   height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .service .img_wrap .img_flex .img_box img {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 220px;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 520px) {
   .service .img_wrap .img_flex .img_box img {
     /* 520px以下で表示させたいcssを記述していく */
     width: 160px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .service .img_wrap .img_flex .img_box img {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 120px;
     height: auto;
   }
 }
@@ -646,7 +800,7 @@ header .globalMenuSp.active {
   margin-left: 95px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1330px) {
   .service .img_wrap .img_flex .img_box:nth-child(4) {
     /* 520px以下で表示させたいcssを記述していく */
     margin-left: 0;
@@ -703,6 +857,14 @@ header .globalMenuSp.active {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .service .img_wrap .img_flex .img_box h2 {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 12px;
+    margin-top: 0;
+  }
+}
+
 .service .button_wrap {
   width: 400px;
   margin: 0 auto;
@@ -737,6 +899,13 @@ header .globalMenuSp.active {
     /* 520px以下で表示させたいcssを記述していく */
     padding: 16px 0;
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .service .button_wrap .contact_button {
+    /* 520px以下で表示させたいcssを記述していく */
+    font-size: 14px;
   }
 }
 
@@ -851,6 +1020,13 @@ header .globalMenuSp.active {
   padding: 90px 0 0 0;
 }
 
+@media screen and (max-width: 1300px) {
+  .product .slider_area {
+    /* 520px以下で表示させたいcssを記述していく */
+    width: 88%;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .product .slider_area {
     /* 520px以下で表示させたいcssを記述していく */
@@ -865,6 +1041,13 @@ header .globalMenuSp.active {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .product .slider_area {
+    /* 520px以下で表示させたいcssを記述していく */
+    padding: 60px 0 0 0;
+  }
+}
+
 .product .slider_area .slider_wrap {
   max-width: 1130px;
   height: 400px;
@@ -874,6 +1057,13 @@ header .globalMenuSp.active {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+@media screen and (max-width: 375px) {
+  .product .slider_area .slider_wrap {
+    /* 520px以下で表示させたいcssを記述していく */
+    height: 350px;
+  }
 }
 
 .product .slider_area .slider_wrap .prev-arrow {
@@ -889,7 +1079,14 @@ header .globalMenuSp.active {
 @media screen and (max-width: 1330px) {
   .product .slider_area .slider_wrap .prev-arrow {
     /* 520px以下で表示させたいcssを記述していく */
-    left: 0;
+    left: -40px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .product .slider_area .slider_wrap .prev-arrow {
+    /* 520px以下で表示させたいcssを記述していく */
+    left: -30px;
   }
 }
 
@@ -914,7 +1111,14 @@ header .globalMenuSp.active {
 @media screen and (max-width: 1330px) {
   .product .slider_area .slider_wrap .next-arrow {
     /* 520px以下で表示させたいcssを記述していく */
-    right: 0;
+    right: -40px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .product .slider_area .slider_wrap .next-arrow {
+    /* 520px以下で表示させたいcssを記述していく */
+    right: -30px;
   }
 }
 
