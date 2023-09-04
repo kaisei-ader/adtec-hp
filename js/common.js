@@ -12,6 +12,21 @@ $(function () {
 });
 
 $(function () {
+  const checkBox = [];
+  checkBox["kaisei"] = "hello";
+  checkBox["yusei"] = "hello2";
+  checkBox["daiya"] = "hello3";
+  checkBox["daiya"] = "hello4";
+  console.log(checkBox);
+
+  var new_check_list = object.key(checkbox).map(function (key) {
+    return [String(key), checkbox[key]];
+  });
+
+  console.log(new_check_list);
+});
+
+$(function () {
   $(".slider_wrap").slick({
     autoplay: true,
     autoplaySpeed: 3000,
